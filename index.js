@@ -14,7 +14,7 @@ app.use (logger('tiny'));
 app.use(bodyParser.json());
 
 app.use('/', require(path.join(__dirname, 
-  'routes')));
+  'routes/stats')));
   console.log(path.join(__dirname, 'routes'));
 app.use((req, res, next) => {
   const err = new Error(`${req.method} ${req.url} Not Found`);

@@ -19,13 +19,8 @@ Number(req.params.id));
         }catch(e){
             next(e);
         }
-     };
-router
-     .route('/api/v1/stats/:id')
-     .get(getStats)
-     .put(updateStats)
-     .delete(deleteStats);
-    module.exports=router;
+     }
+
 
 const createStats = async (req,res, next)=>{
     try{
@@ -44,10 +39,8 @@ const createStats = async (req,res, next)=>{
         next(e);
     }
 
-};
-router 
-.route('/api/v1/stats')
-.post(createStats);
+}
+
     
 const updateStats = async (req, res, next)=>{
     try{
@@ -105,5 +98,20 @@ const deleteStats = async (req, res, next) => {
     } catch (e) {
       next(e);
     }
-  };
+    router
+    .route('/api/v1/stats/:id')
+    .get(getStats)
+    .put(updateStats)
+    .delete(deleteStats);
+    
+    
+    router 
+.route('/api/v1/stats')
+.post(createStats);
+   
+
+module.exports=router;
+
+
+};
   
