@@ -98,20 +98,22 @@ const deleteStats = async (req, res, next) => {
     } catch (e) {
       next(e);
     }
-    router
-    .route('/api/v1/stats/:id')
-    .get(getStats)
-    .put(updateStats)
-    .delete(deleteStats);
     
-    
-    router 
+
+
+};
+router
+.route('/api/v1/stats/:id')
+.get(getStats)
+.put(updateStats)
+.delete(deleteStats)
+
+
+router 
 .route('/api/v1/stats')
 .post(createStats);
-   
+
 
 module.exports=router;
 
 
-};
-  
