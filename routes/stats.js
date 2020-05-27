@@ -6,7 +6,7 @@ const router = express.Router();
 
 const getStats = async (req, res , next) =>{
     try{
-        const data = fs.readFileSync(path.join(dirname, './stats.json'));
+        const data = fs.readFileSync(path.join(__dirname, './stats.json'));
         const stats = JSON.parse(data);
         const playerStats = stats.find(player=>player.id===
 Number(req.params.id));
